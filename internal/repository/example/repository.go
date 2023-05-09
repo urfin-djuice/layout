@@ -1,6 +1,8 @@
 package example
 
-import "github.eapteka.ru/example/internal/model"
+import (
+	"github.com/urfin-djuice/layout/internal/domain"
+)
 
 type Repository struct {
 	// Тут необходимые для работы репозитория переменные (конекты к БД, логеры, контекты)
@@ -12,16 +14,16 @@ func New() *Repository {
 }
 
 // GetOne Получить одну запись модели Example
-func (r *Repository) GetOne() (*model.Example, error) {
-	return &model.Example{
+func (r *Repository) GetOne() (*domain.Example, error) {
+	return &domain.Example{
 		Field1: "example string",
 		Field2: 1,
 	}, nil
 }
 
 // GetList Получить список записей модели Example
-func (r *Repository) GetList() ([]model.Example, error) {
-	return []model.Example{
+func (r *Repository) GetList() ([]domain.Example, error) {
+	return []domain.Example{
 		{
 			Field1: "string 1",
 			Field2: 1,
